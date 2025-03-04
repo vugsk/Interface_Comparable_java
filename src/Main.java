@@ -1,9 +1,11 @@
 import AnimalTask.*;
+import StudentsTask.*;
 
 import java.util.Arrays;
 
+
 public class Main {
-	private void task1()
+	private static void task1()
 	{
 		System.out.println("Task 1");
 		AnimalComparator animalComparator = new AnimalComparator();
@@ -18,8 +20,24 @@ public class Main {
 		System.out.println("Sort age: " + animals[0].toString() + animals[1]);
 	}
 	
-	public static void main(String[] args) {
+	private static void task2()
+	{
+		System.out.println("Task 2");
+		ComparatorStudentScore comparatorStudentScore = new ComparatorStudentScore();
+		Student[] students = new Student[2];
+		students[0] = new Student("John", 42);
+		students[1] = new Student("Ann", 20);
+		
+		Arrays.sort(students);
+		System.out.println("Sort name: " + students[0].toString() + ' ' + students[1]);
+		
+		Arrays.sort(students, comparatorStudentScore);
+		System.out.println("Sort age: " + students[0].toString() + ' ' + students[1]);
+	}
 	
-	
+	public static void main(String[] args)
+	{
+		task1();
+		task2();
 	}
 }
